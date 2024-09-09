@@ -11,8 +11,8 @@ CATEGORY = (
 )
 
 AVAILABILITY = (
-	(0, "Unavailable"),
-	(1, "Available")
+	(0, "no"),
+	(1, "yes")
 )
 
 
