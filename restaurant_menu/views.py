@@ -1,11 +1,11 @@
 from django.shortcuts import render
 from django.views import generic
-from .models import Item
+from restaurant_menu.models import Item
 
 # Create your views here.
 
 class MenuList(generic.ListView):
-	queryset = Item.object.order_by("creation_date")
+	queryset = Item.objects.order_by("creation_date")
 	template_name = "index.html"
 
 
