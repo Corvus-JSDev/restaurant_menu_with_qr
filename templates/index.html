@@ -15,9 +15,9 @@
     {% for m in item_list %}
         {% if m.category == meal.0 %}
             {% if m.is_available == 1 %}
-                <h4>{{ m.meal }}</h4>
+                <a href="{% url 'menu_item' m.pk %}"><h4>{{ m.meal }}</h4></a>
             {% else %}
-                <h4 style="text-decoration: line-through;" title="Sold Out">{{ m.meal }}</h4>
+                <a href="{% url 'menu_item' m.pk %}"><h4 style="text-decoration: line-through;" title="Sold Out">{{ m.meal }}</h4></a>
             {% endif %}
 
             <p>{{ m.desc }}</p>
