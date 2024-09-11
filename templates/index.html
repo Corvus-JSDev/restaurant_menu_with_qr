@@ -6,10 +6,27 @@
 </head>
 <body>
 
-<h1>Hello world</h1>
-<h3>
-    {{ meals }}
-</h3>
+<h1>Restaurant Menu</h1>
+<br>
+
+{% for meal in meals %}
+<h2>{{ meal.1 }}</h2>
+
+    {% for m in item_list %}
+        {% if m.category == meal.0 %}
+            {% if m.is_available == 1 %}
+                <h4>{{ m.meal }}</h4>
+            {% else %}
+                <h4 style="text-decoration: line-through;" title="Sold Out">{{ m.meal }}</h4>
+            {% endif %}
+
+            <p>{{ m.desc }}</p>
+            <br>
+        {% endif %}
+    {% endfor %}
+
+<br> <br>
+{% endfor %}
 
 </body>
 </html>
